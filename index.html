@@ -3,5 +3,10 @@
 
 <script>
     let theNumber = Number(prompt("Pick a number"));
-    console.log("Your number is the square root of " + theNumber * theNumber);
+    if (Number.isNaN(theNumber)) {
+        console.log("Please type a number:)");
+    } else {
+        console.log("Your number is the square root of " + theNumber * theNumber);
+    }
 </script>
+
