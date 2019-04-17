@@ -1,0 +1,16 @@
+<html>
+<body>
+<p>Click the button to display the number of anchors in the document.</p>
+
+<button onclick="myFunction()">How many anchors?</button>
+
+<p id="demo"></p>
+
+<script>
+function myFunction() {
+  var x = document.anchors.length;
+  document.getElementById("demo").innerHTML = x;
+}
+</script>
+</body>
+</html>
