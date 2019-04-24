@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Number Guessing Game</title>
+		<!-- Meta Tags -->
+		<meta charset="utf-8"/>
+		<!-- Stylesheets -->
+		<!-- <link rel="stylesheet" href="styles.css"> -->
+		<!-- <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css"> -->
+        <!-- JavaScript -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script type="text/javascript" src="guessing-game.js"></script>
+    </head>
+    <body>
+        <div class="game">
+            <header>
+                <h1>Number Guessing Game</h1>
+            </header>
+            <form class="guessingForm">
+                <input name="user-guess" id="js-user-guess" autocomplete="off" placeholder="Enter a number 1 and 5" required/>
+                <input type="submit" id="js-guess-submit" />
+            </form>
+            <p id="responseText"></p>
+            <p id="guessCount"></p>  
+        </div>
+    </body>
+</html>
