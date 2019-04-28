@@ -10,8 +10,15 @@
 //   }
 // }
 
-//The if function will do only the first true thing. That's why I have to write #2 fisrt! 
+//The if  will do only the first true thing. That's why I have to write #2 fisrt! 
 // plural means it is an array, so I would change numbers to number.
+
+
+
+
+
+
+
 
 
 
@@ -31,6 +38,10 @@
 // for (number = 0; number <= 100; number++) {
 //   printFizzBuzz(number);
 // }
+
+
+
+
 
 
 

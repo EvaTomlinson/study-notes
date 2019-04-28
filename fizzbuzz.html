@@ -1,21 +1,63 @@
+<h1>Original Solution!</h1>
 <pre>
-  // for (number = 0; number <= 100; number++) {
-  //   if (number % 3 === 0 && number % 5 === 0){
-  //     console.log("FizzBuzz"); 
-  //   } else if(number % 3 === 0) {
-  //     console.log("Fizz");
-  //   } else if (number % 5 === 0){
-  //     console.log("Buzz");
-  //   } else {
-  //     console.log(number);
-  //   }
-  // }
-  
-  
-  //plural means it is an array, so I would change numbers to number.
-  //
-  
+  for (number = 0; number <= 100; number++) {
+    if (number % 3 === 0 && number % 5 === 0){
+      console.log("FizzBuzz"); 
+    } else if(number % 3 === 0) {
+      console.log("Fizz");
+    } else if (number % 5 === 0){
+      console.log("Buzz");
+    } else {
+      console.log(number);
+    }
+  }
+
+  // The if  will do only the first true thing. That's why I have to write #2 fisrt!   
+  // plural means it is an array, so I would change numbers to number.
+</pre>
+
+<h1>Solution with a Function</h1>
+<pre>
+  function printFizzBuzz(number){
+    if (number % 3 === 0 && number % 5 === 0){
+      console.log("FizzBuzz"); 
+    } else if(number % 3 === 0) {
+      console.log("Fizz");
+    } else if (number % 5 === 0){
+      console.log("Buzz");
+    } else {
+      console.log(number);
+    }
+  }
+
   for (number = 0; number <= 100; number++) {
     printFizzBuzz(number);
   }
+</pre>
+
+<h1>Returning with fixing a bug instead of colsolelog</h1>
+<pre>
+    function fizzBuzz(number){
+      if (number % 3 === 0 && number % 5 === 0){
+        // console.log("FizzBuzz");
+        return "FizzBuzz";
+      } else if(number % 3 === 0) {
+        // console.log("Fizz");
+        return "Fizz";
+      } else if (number % 5 === 0){
+        // console.log("Buzz");
+        return "Buzz";
+      } else {
+        // console.log(number);
+        return number;
+      }
+    }
+    
+    
+    for (number = 0; number <= 20; number++) {
+      let result = fizzBuzz(number);
+      console.log("result: " + result);
+    }
+
+    // When a function doesn't have a return and I try to print the output, it will give me undefined.
 </pre>
