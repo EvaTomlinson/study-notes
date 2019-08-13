@@ -1,0 +1,28 @@
+
+<h1>Modulus is an operator(%) that gives remainders of something.</h1>
+<h2>In computer, it starts from number zero NOT one.</h2>
+<h2>Index is a thing that is pointed.</h2>
+<h2>Elements are each thing in an arrary from left to right.</h2>
+
+<script>
+// console.log("i    i % 7");
+let randomArray = [];
+for (let i = 0; i <= 15; i++) {
+  // console.log(i, '', i % 7);
+  randomArray.push(Math.floor(Math.random() * 20))
+}
+console.log(randomArray);
+
+for (let index = 0; index < randomArray.length; index++) {
+  let serialNumber = randomArray[index];
+  if (serialNumber % 2 == 1) {
+      console.log("odd, keep", serialNumber);
+  } else {
+      console.log("even, trash", serialNumber);
+  }
+}
+
+// console.log("element #0:", randomArray[0]);
+// console.log("element #1:", randomArray[1]);
+// console.log("element #2:", randomArray[2]);
+</script>
