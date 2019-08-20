@@ -9,7 +9,34 @@
 //////////////////////////////////////////
 // Write your function below this line: //
 //////////////////////////////////////////
-
+function series(a, b) {
+  let sum = 0;
+  
+  if (a > b) {
+  } else {
+  }
+  for(let i = smaller; i <= bigger; i++) {
+    sum = sum + i;
+  }
+  return sum;
+}
+// function series(a, b) {
+//   let sum = 0;
+//   let bigger;
+//   let smaller;
+  
+//   if (a > b) {
+//     bigger = a;
+//     smaller = b;
+//   } else {
+//     bigger = b;
+//     smaller = a;
+//   }
+//   for(let i = smaller; i <= bigger; i++) {
+//     sum = sum + i;
+//   }
+//   return sum;
+// }
 
 /////////////////////////////////////////////
 // Do not modify anything below this line: //
