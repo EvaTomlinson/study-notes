@@ -1,17 +1,52 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>My first proper HTML page</title>
+  <title>Hangmand!</title>
 </head>
 
 <body>
-  <h1>Hello world!</h1>
+  <h1>Hangman!</h1>
   <p>My <em>first</em>  <strong>web page</strong>.</p>
   <p>Let's add another <strong><em>paragraph</em></strong>.</p>
+
+
+  <script>
+  //creat an array of words
+  const words = ["Engineer", "Watermelon", "Calculator", "Komeri"];
+  //pick a random word
+  let word = words[Math.floor(Math.random() * words.length)];
+  //Set up the answer array
+  let anwerArray = [];
+  for (let i = 0; i < word.length; i++) {
+    answerArray[i] = "_";
+  }
+  let remainingLetters = word.length;
+
+  //the game loop
+  while(remainingLetters > 0) {
+    //show the player their progress
+    alert(anwerArray.join(" "));
+    // get a guess from the player
+    let guess = prompt("Guess a letter, or click Cancle to stop playing.");
+    if (guess === null) {
+      //exit the game loop
+      break;
+    } else if (guess !== 1) {
+      alert("Please enter a single letter.");
+    } else {
+      //update the game state with the guess
+      for (let j = 0; j < word.length; j++) {
+        if (word[j] === guess) {
+          answerArray[j] = guess;
+          remainingLetters--;
+        }
+      }
+    } 
+    //the end of the game loop
+  }
+  //show the answer and congratulate the player
+  alert(anwerArray.join(" "));
+  alert("Good job! the answer was " + word);
+  </script>
 </body>
 </html>
-
-<script>
-let name = prompt("What's your name?");
-console.log("Hello " + name);
-</script>
