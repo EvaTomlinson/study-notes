@@ -19,10 +19,9 @@
     answerArray[i] = "_";
   }
   let remainingLetters = word.length;
-  let givenGuess = 30;
- 
+  let maximumGuess = 20;
   //the game loop
-  while(remainingLetters > 0 && givenGuess !== 0) {
+  while(remainingLetters > 0 && maximumGuess > 0) {
     //show the player their progress
     alert(answerArray.join(" "));
     // get a guess from the player
@@ -33,9 +32,10 @@
     } else if (guess.length !== 1) {
       alert("Please enter a single letter.");
     } else {
+      maximumGuess--;
       //update the game state with the guess
       for (let j = 0; j < convert.length; j++) {
-        if (convert[j] === guess) {
+        if (convert[j] === guess && answerArray[j] === "_") {
           answerArray[j] = guess;
           remainingLetters--;
         }
@@ -45,7 +45,11 @@
   }
   //show the answer and congratulate the player
   alert(anwerArray.join(" "));
-  alert("Good job! the answer was " + convert);
+  if (maximumGuess > 0) {
+    alert("Good job! the answer was " + convert);
+  } else {
+    alert("Sorry you ran out of guesses. The answer was" + convert);
+  }
   </script>
 </body>
 </html>
