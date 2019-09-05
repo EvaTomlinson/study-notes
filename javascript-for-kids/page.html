@@ -19,9 +19,10 @@
     answerArray[i] = "_";
   }
   let remainingLetters = word.length;
+  let givenGuess = 30;
  
   //the game loop
-  while(remainingLetters > 0) {
+  while(remainingLetters > 0 && givenGuess !== 0) {
     //show the player their progress
     alert(answerArray.join(" "));
     // get a guess from the player
