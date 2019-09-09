@@ -1,65 +1,66 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Hangmand!</title>
-</head>
+  <head>
+    <title>Hangman!</title>
+  </head>
 
-<body>
-  <h1>Hangman!</h1>
-  
+  <body>
+    <h1>Hangman!</h1>
+    <img src="./hangman-images/0.jpg" />
+  </body>
+
   <script>
-  //creat an array of words
-  const words = ["Engineer", "Watermelon", "Calculator", "Komeri", "Massage","Roadtrip"];
-  //pick a random word
-  let word = words[Math.floor(Math.random() * words.length)];
-  let answer = word.toLowerCase();
-  //Set up the answer array
-  let answerArray = [];
-  for (let i = 0; i < word.length; i++) {
-    answerArray[i] = "_";
-  }
-  let remainingLetters = word.length;
-  let remainingGuesses = 7;
-  //the game loop
-  while(remainingLetters > 0 && remainingGuesses > 0) {
-    console.log("remainingGuesses", remainingGuesses)
-    console.log("remainingLetters", remainingLetters)
-    //show the player their progress
-    alert(answerArray.join(" "));
-    // get a guess from the player
-    let guess = prompt("Guess a letter, or click Cancel to stop playing.");
-    if (guess === null) {
-      //exit the game loop
-      break;
-    } else if (guess.length !== 1) {
-      alert("Please enter a single letter.");
+    //creat an array of words
+    const words = ["Engineer", "Watermelon", "Calculator", "Komeri", "Massage","Roadtrip"];
+    //pick a random word
+    let word = words[Math.floor(Math.random() * words.length)];
+    let answer = word.toLowerCase();
+    //Set up the answer array
+    let answerArray = [];
+    for (let i = 0; i < word.length; i++) {
+      answerArray[i] = "_";
+    }
+    let remainingLetters = word.length;
+    let remainingGuesses = 7;
+    //the game loop
+    while(remainingLetters > 0 && remainingGuesses > 0) {
+      console.log("remainingGuesses", remainingGuesses)
+      console.log("remainingLetters", remainingLetters)
+      //show the player their progress
+      alert(answerArray.join(" "));
+      // get a guess from the player
+      let guess = prompt("Guess a letter, or click Cancel to stop playing.");
+      if (guess === null) {
+        //exit the game loop
+        break;
+      } else if (guess.length !== 1) {
+        alert("Please enter a single letter.");
+      } else {
+        let guessWasCorrect = false;
+        //update the game state with the guess
+        for (let j = 0; j < answer.length; j++) {
+          if (guess === answer[j]) {
+            guessWasCorrect = true;
+            console.log("matched: ", guess);
+          }
+          if (guess === answer[j] && answerArray[j] === "_") {
+            answerArray[j] = guess;
+            remainingLetters--;
+          }
+        }
+        
+        if (!guessWasCorrect) {
+          remainingGuesses--;
+        }
+      } 
+      //the end of the game loop
+    }
+    if (remainingLetters == 0) {
+      alert("Good job! the answer was " + answer);
+    } else if (remainingGuesses == 0) {
+      alert("Sorry you ran out of guesses. The answer was " + answer);
     } else {
-      let guessWasCorrect = false;
-      //update the game state with the guess
-      for (let j = 0; j < answer.length; j++) {
-        if (answer[j] === guess) {
-          guessWasCorrect = true;
-          console.log("matched: ", guess);
-        }
-        if (answer[j] === guess && answerArray[j] === "_") {
-          answerArray[j] = guess;
-          remainingLetters--;
-        }
-      }
-
-      if (!guessWasCorrect) {
-        remainingGuesses--;
-      }
-    } 
-    //the end of the game loop
-  }
-  if (remainingLetters == 0) {
-    alert("Good job! the answer was " + answer);
-  } else if (remainingGuesses == 0) {
-    alert("Sorry you ran out of guesses. The answer was " + answer);
-  } else {
-    alert("Awww I will miss you :( I hope to see you again soon!");
-  }
+      alert("Awww I will miss you :( I hope to see you again soon!");
+    }
   </script>
-</body>
 </html>
