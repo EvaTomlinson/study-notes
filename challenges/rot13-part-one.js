@@ -17,6 +17,20 @@
 // Write your function below this line: //
 //////////////////////////////////////////
 
+function rot13() {
+  if (rot13 !== " ") {
+    throw new error (
+      "input must be a string."
+    ); 
+  } else if (rot13 !== 1){
+    throw new error (
+      "input must be exactly one character."
+    );
+  } else {
+    return input = 13 + input;
+  }
+}
+
 /////////////////////////////////////////////
 // Do not modify anything below this line: //
 /////////////////////////////////////////////
