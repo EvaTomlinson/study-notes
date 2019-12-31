@@ -1,7 +1,29 @@
-class Button extends React.Component {
+class Clicker extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { counter: 0 };
+  }
+
+  clickHandler() {
+    this.setState({
+      counter: this.state.counter + 1
+    });
+  }
+
   render() {
-    return <p>Hello</p>;
+    return (
+      <React.Fragment>
+        <button
+          onClick={() => {
+            this.clickHandler();
+          }}
+        >
+          push me
+        </button>
+        <p>click count: {this.state.counter}</p>
+      </React.Fragment>
+    );
   }
 }
 
-ReactDOM.render(<Button />, document.getElementById("click-counter"));
+ReactDOM.render(<Clicker />, document.getElementById("click-counter"));
