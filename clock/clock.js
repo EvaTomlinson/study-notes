@@ -50,7 +50,7 @@ class Clock extends React.Component {
           {this.state.date.toLocaleTimeString(locale, seoulOptions)}
           <img
             className="flag"
-            src="south_korean_flag.svg"
+            src="../images/south_korean_flag.svg"
             alt="South Korean flag"
             height="30"
           />
@@ -59,7 +59,7 @@ class Clock extends React.Component {
           {this.state.date.toLocaleTimeString(locale, atlantaOptions)}
           <img
             className="flag"
-            src="american_flag.jpg"
+            src="../images/american_flag.jpg"
             alt="American flag"
             height="30"
           />
