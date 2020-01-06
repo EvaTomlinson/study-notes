@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>React Starter</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"></script>
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <style>
+      .red-box {
+        border: 1px solid red;
+      }
+      .green-box {
+        border: 1px solid green;
+      }
+      .blue-box {
+        border: 2px dashed blue;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- <div id="react-starter"></div> -->
+    <div id="bangoo"></div>
+
+    <script type="text/babel">
+      class MyComponent extends React.Component {
+        constructor(props) {
+          super(props);
+          this.state = { children: [1, 2, 3] };
+        }
+
+        render() {
+          return (
+            <React.Fragment>
+              <p className="red-box">MyComponent</p>
+              {this.state.children.map(child => {
+                return <Child childNumber={child} />;
+              })}
+              <NewComponent />
+            </React.Fragment>
+          );
+        }
+      }
+
+      class Child extends React.Component {
+        render() {
+          return (
+            <div className="red-box">
+              <span>I am child #{this.props.childNumber}!</span>
+              <span> </span>
+              <span className="green-box">Green!</span>
+              <span> </span>
+              <span className="blue-box">Blue!</span>
+            </div>
+          );
+        }
+      }
+
+      class NewComponent extends React.Component {
+        constructor(props) {
+          super(props);
+          this.state = {
+            newChildren: [8, 10]
+          };
+        }
+        render() {
+          return this.state.newChildren.map(newChild => {
+            return <Child childNumber={newChild}></Child>;
+          });
+        }
+      }
+
+      // ReactDOM.render(<Child />, document.getElementById("react-starter"));
+      ReactDOM.render(<MyComponent />, document.getElementById("bangoo"));
+    </script>
+  </body>
+</html>
