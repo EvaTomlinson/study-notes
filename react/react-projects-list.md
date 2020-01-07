@@ -1,6 +1,6 @@
 # React Projects
 
-1. Click Counter
+<!-- 1. Click Counter -->
 
 - Keep track of the number of clicks.
 - Buttons: increment, decrement, reset.
@@ -33,6 +33,9 @@
 
 - Convert between celsius and fahreinheit.
 - Inputs: celsius (number), fahreinheit (number).
+- Notes:
+  Fahrenheit = Celsius _ 9 / 5 + 32
+  Celsius = (Fahrenheit - 32) _ 5 / 9
 
 7. Todo list
 

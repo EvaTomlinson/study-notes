@@ -34,14 +34,14 @@ class Counter extends React.Component {
     <p>Click count: {this.state.counter} </p>;
   }
   handleIncrementClick() {
-    this.setState({
-      counter: this.state.counter + 1
-    });
+    this.setState(state => ({
+      counter: state.counter + 1
+    }));
   }
   handleDecrementClick() {
-    this.setState({
-      counter: this.state.counter - 1
-    });
+    this.setState(state => ({
+      counter: state.counter - 1
+    }));
   }
   handleResetClick() {
     this.setState({
