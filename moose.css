@@ -1,0 +1,23 @@
+.red-button {
+  background-color: red;
+}
+.blue-button {
+  background-color: blue;
+}
+.button {
+  color: white;
+  font-size: medium;
+  padding: 16px;
+}
+.button-group {
+  display: flex;
+  flex-direction: column;
+}
+.row {
+  display: flex;
+  flex-direction: row;
+}
+.images {
+  max-width: 100%;
+  height: 200px;
+}
