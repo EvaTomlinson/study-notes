@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Pirate Game</title>
+  </head>
+
+  <body>
+    <div id="root"></div>
+    <link rel="stylesheet" type="text/css" href="pirate_knife_game.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"></script>
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script type="text/babel">
+      const PirateGame = () => {
+        return <Board />;
+      };
+
+      const Board = () => {
+        const [buttonStatus, setButtonStatus] = React.useState([
+          "pirate",
+          "pirate",
+          "pirate"
+        ]);
+
+        const onButtonClick = index => {
+          console.log(index);
+          if (buttonStatus[index] !== "pirate") {
+            return;
+          }
+          const newButtonStatus = buttonStatus.slice();
+          newButtonStatus[index] = "clicked";
+          console.log(newButtonStatus);
+          setButtonStatus(newButtonStatus);
+        };
+        console.log("render", buttonStatus);
+
+        return (
+          <React.Fragment>
+            <div className="button-group">
+              {buttonStatus.map((status, index) => (
+                <PirateButton
+                  key={index}
+                  status={status}
+                  onButtonClick={() => onButtonClick(index)}
+                />
+              ))}
+            </div>
+          </React.Fragment>
+        );
+      };
+
+      const PirateButton = ({ status, onButtonClick }) => {
+        if (status == "pirate") {
+          return (
+            <img
+              onClick={onButtonClick}
+              className="pirate-face"
+              src="../images/pirate.jpg"
+            />
+          );
+        }
+        if (status == "clicked") {
+          return <button className="o-button">O</button>;
+        }
+        if (status == "knifed") {
+          return <button className="x-button">X</button>;
+        }
+      };
+
+      ReactDOM.render(<PirateGame />, document.getElementById("root"));
+    </script>
+  </body>
+</html>
