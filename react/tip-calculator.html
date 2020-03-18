@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TipCalculator</title>
+  </head>
+
+  <body>
+    <div id="react-starter"></div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"></script>
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script type="text/babel">
+      const TipCalculator = () => {
+        const [subTotalPrice, setSubTotalPrice] = React.useState(25);
+        const [percentage, setPercentage] = React.useState(15);
+
+        const tip = (subTotalPrice * percentage) / 100;
+        const total = tip + subTotalPrice;
+
+        const handleSubTotalPriceChange = event => {
+          const newSubTotalPrice = event.target.value;
+          setSubTotalPrice(newSubTotalPrice);
+        };
+        const handlePercentageChange = event => {
+          const newPercentage = event.target.value;
+          setPercentage(newPercentage);
+        };
+
+        const handlePercentageClick = newPercentage => {
+          setPercentage(newPercentage);
+        };
+
+        return (
+          <React.Fragment>
+            <p>Tip Calculator!</p>
+            <label>
+              Sub Total ($):
+              <input
+                onChange={handleSubTotalPriceChange}
+                value={subTotalPrice}
+                type="text"
+              />
+            </label>
+            <br />
+            <label>
+              Percentage (%):
+              <input
+                onChange={handlePercentageChange}
+                value={percentage}
+                type="text"
+              />
+            </label>
+
+            <button
+              onClick={() => {
+                handlePercentageClick(10);
+              }}
+            >
+              10%
+            </button>
+            <button
+              onClick={() => {
+                handlePercentageClick(15);
+              }}
+            >
+              15%
+            </button>
+            <button
+              onClick={() => {
+                handlePercentageClick(20);
+              }}
+            >
+              20%
+            </button>
+
+            <p>Your tip should be ${tip}</p>
+            <p>Your total is ${total}</p>
+          </React.Fragment>
+        );
+      };
+
+      ReactDOM.render(
+        <TipCalculator />,
+        document.getElementById("react-starter")
+      );
+    </script>
+  </body>
+</html>
