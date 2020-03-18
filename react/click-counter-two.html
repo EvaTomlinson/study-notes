@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>React Starter</title>
+  </head>
+
+  <body>
+    <div id="react-starter"></div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"></script>
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script type="text/babel">
+      const StarterApp = () => {
+        const [numberOfClicks, setNumberOfClicks] = React.useState(0);
+        const increaseCount = () => {
+          setNumberOfClicks(numberOfClicks + 1);
+        };
+        const decreaseCount = () => {
+          setNumberOfClicks(numberOfClicks - 1);
+        };
+        const resetCount = () => {
+          setNumberOfClicks(0);
+        };
+        return (
+          <React.Fragment>
+            <p>Number of clicks: {numberOfClicks}</p>
+            <button onClick={increaseCount}>increase</button>
+            <button onClick={decreaseCount}>decrease</button>
+            <button onClick={resetCount}>reset</button>
+          </React.Fragment>
+        );
+      };
+
+      ReactDOM.render(<StarterApp />, document.getElementById("react-starter"));
+    </script>
+  </body>
+</html>
