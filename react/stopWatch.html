@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>React Starter</title>
+  </head>
+
+  <body>
+    <div id="scratch1"></div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"></script>
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script type="text/babel">
+      class StopWatch extends React.Component {
+        constructor(props) {
+          super(props);
+          this.state = {
+            reset: 0,
+            start: 0,
+            stop: 0,
+            hour: 0,
+            minute: 0,
+            second: 0
+          };
+        }
+        componentDidMount
+        render() {
+          return (
+            <React.Fragment>
+              <p>Welcome to my Stopwatch!</p>
+              <p>00:00:00</p>
+              <button
+                onClick={() => {
+                  this.handleReset();
+                }}
+              >
+                reset
+              </button>
+              <button
+                onClick={() => {
+                  this.handleStart();
+                }}
+              >
+                start
+              </button>
+              <button
+                onClick={() => {
+                  this.handleEnd();
+                }}
+              >
+                stop
+              </button>
+            </React.Fragment>
+          );
+        }
+
+        seconds() {
+          this.setState({
+            second: this.state.second + 1
+          });
+                
+        }
+        handleStart() {
+          this.setState({
+            start: this.state.start
+          });
+        }
+        handleReset() {
+          this.setState({
+            reset: this.state.reset
+          });
+        }
+        handleEnd() {
+          this.setState({
+            stop: this.state.stop
+          });
+        }
+      }
+      
+      ReactDOM.render(<StopWatch />, document.getElementById("scratch1"));
+      </script>
+  </body>
+  </html>
+  
