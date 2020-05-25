@@ -1,0 +1,12 @@
+{
+  "name": "study-notes",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/EvaTomlinson/study-notes.git",
+  "author": "Eva Tomlinson <kkheva0215@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "ts-node": "^8.10.1",
+    "typescript": "^3.9.3"
+  }
+}
