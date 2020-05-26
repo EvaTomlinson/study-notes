@@ -17,10 +17,7 @@ function largestPalindrome(digits: number) {
       if (isPalindrome(product)) {
         if (currentLargestPalindrome < product) {
           currentLargestPalindrome = product;
-          console.log(
-            "largestPalindrome -> currentLargestPalindrome",
-            currentLargestPalindrome
-          );
+          currentLargestPalindrome;
         }
       }
     }
