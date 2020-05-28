@@ -8,15 +8,20 @@
 // numbers from 1 to 20?
 
 function smallestNumberDivisibleByUpToN(maximumDivisor: number) {
-  return 0;
+  let dividend = maximumDivisor;
+  while (!isDivisibleByNumbers(maximumDivisor, dividend)) {
+    dividend++;
+  }
+  return dividend;
 }
+
 const testMaximumDivisor = 10;
 const testDividend = 2520;
 const expectedResult = 2520;
 if (smallestNumberDivisibleByUpToN(testMaximumDivisor) == expectedResult) {
   console.log("You got it!");
   console.log(
-    "smallest number divisible by 1 to 20",
+    "smallest number divisible by 1 to 20 is",
     smallestNumberDivisibleByUpToN(20)
   );
 } else {
@@ -24,6 +29,14 @@ if (smallestNumberDivisibleByUpToN(testMaximumDivisor) == expectedResult) {
 }
 
 function isDivisibleByNumbers(maximumDivisor: number, dividend: number) {
+  let divisor = 2;
+  while (divisor <= maximumDivisor) {
+    if (dividend % divisor == 0) {
+      divisor++;
+    } else {
+      return false;
+    }
+  }
   return true;
 }
 
