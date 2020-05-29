@@ -13,14 +13,18 @@
 // Find the difference between the sum of the squares of the first one hundred
 // natural numbers and the square of the sum.
 
-function sumOfSquares(naturalNumber: number) {
-  return 0;
+function sumOfSquares(maximumNumber: number) {
+  let resultOfSumOfSquares = 0;
+  for (let integer = 1; integer <= maximumNumber; integer++) {
+    resultOfSumOfSquares = resultOfSumOfSquares + integer ** 2;
+  }
+  return resultOfSumOfSquares;
 }
 
 function testSumOfSquares() {
-  const naturalNumber = 10;
+  const maximumNumber = 10;
   const expectedTestSumOfSquares = 385;
-  if (sumOfSquares(naturalNumber) == expectedTestSumOfSquares) {
+  if (sumOfSquares(maximumNumber) == expectedTestSumOfSquares) {
     console.log("It works!");
   } else {
     console.log("It failed.");
@@ -28,14 +32,20 @@ function testSumOfSquares() {
 }
 testSumOfSquares();
 
-function squareOfSum(naturalNumber: number) {
-  return 0;
+function squareOfSum(maximumNumber: number) {
+  let resultOfSquaredOfSum = 0;
+  let sum = 0;
+  for (let integer = 1; integer <= maximumNumber; integer++) {
+    sum = sum + integer;
+  }
+  resultOfSquaredOfSum = sum ** 2;
+  return resultOfSquaredOfSum;
 }
 
 function testSquareOfSum() {
-  const naturalNumber = 10;
+  const maximumNumber = 10;
   const expectedTestSquareOfSum = 3025;
-  if (squareOfSum(naturalNumber) == expectedTestSquareOfSum) {
+  if (squareOfSum(maximumNumber) == expectedTestSquareOfSum) {
     console.log("You got it!");
   } else {
     console.log("Try again");
@@ -43,15 +53,16 @@ function testSquareOfSum() {
 }
 testSquareOfSum();
 
-function difference(naturalNumber: number) {
-  return squareOfSum(naturalNumber) - sumOfSquares(naturalNumber);
+function difference(maximumNumber: number) {
+  return squareOfSum(maximumNumber) - sumOfSquares(maximumNumber);
 }
 
 function testDifference() {
   const expectedDifference = 2640;
-  const naturalNumber = 10;
-  if (difference(naturalNumber) == expectedDifference) {
+  const maximumNumber = 10;
+  if (difference(maximumNumber) == expectedDifference) {
     console.log("Working!");
+    console.log("The answer is", difference(100));
   } else {
     console.log("Not working.");
   }
